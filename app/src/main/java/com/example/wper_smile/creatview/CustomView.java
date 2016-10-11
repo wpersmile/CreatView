@@ -40,27 +40,25 @@ public class CustomView extends View{
         paint.setStrokeWidth(5);
 
         //绘制普通矩形
-        canvas.drawRect(10, 10, 100, 100, paint);
+        canvas.drawRect(10, 10, 300, 300, paint);
 
         //绘制三角形，内部填充
         Path path=new Path();
-        path.moveTo(10, 120);
-        path.lineTo(200, 120);
-        path.lineTo(100, 200);
+        path.moveTo(400, 400);
+        path.lineTo(300, 550);
+        path.lineTo(600, 550);
         path.close();
         paint.setStyle(Paint.Style.FILL);
         canvas.drawPath(path, paint);
 
         //绘制文本
-        paint.setTextSize(30);
+        paint.setTextSize(150);
         paint.setColor(Color.BLACK);
         paint.setStrikeThruText(true);
-        canvas.drawText("hello", 400, 200, paint);
+        canvas.drawText("hello", 800, 700, paint);
 
-        Path pathText=new Path();
-        pathText.addCircle(200,300,80, Path.Direction.CCW);
-
-        canvas.drawTextOnPath("这是一个圆 这是一个圆 这是一个圆",pathText,0,10,paint);
+       //绘制圆
+        Paint paint1=new Paint();
+        canvas.drawCircle(400, 900, 200, paint1);// 圆
     }
-
 }
